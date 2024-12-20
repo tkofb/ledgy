@@ -1,0 +1,19 @@
+.navbarHeading {
+  display: inline;
+  margin: 0 20px;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  /* margin: top  side bott side */
+  margin: 20px 50px 20px 50px;
+}
+
+.getStarted {
+  font-size: 20px;
+  /* font-family: 'Times New Roman', Times, serif */
+}

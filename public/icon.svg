@@ -25,7 +25,7 @@
      inkscape:document-units="mm"
      inkscape:zoom="0.59598064"
      inkscape:cx="397.66392"
-     inkscape:cy="561.25984"
+     inkscape:cy="589.78426"
      inkscape:window-width="1900"
      inkscape:window-height="1018"
      inkscape:window-x="1605"
@@ -39,44 +39,44 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#1a1a1a;stroke-width:0.343958"
+       style="fill:#1a1a1a;stroke-width:0.633319"
        id="rect2"
-       width="17.757851"
-       height="126.52466"
-       x="96.121078"
-       y="84.262703"
-       ry="8.8789253" />
+       width="32.696995"
+       height="232.96603"
+       x="88.651505"
+       y="30.2218"
+       ry="16.348497" />
     <rect
-       style="fill:#1a1a1a;stroke-width:0.343958"
+       style="fill:#1a1a1a;stroke-width:0.633319"
        id="rect2-6"
-       width="17.757851"
-       height="126.52466"
-       x="96.121078"
-       y="86.212646"
-       ry="8.8789253" />
+       width="32.696995"
+       height="232.96603"
+       x="88.651505"
+       y="33.812172"
+       ry="16.348497" />
     <rect
-       style="fill:#1a1a1a;stroke-width:0.343958"
+       style="fill:#1a1a1a;stroke-width:0.633319"
        id="rect3"
-       width="111.87444"
-       height="16.426008"
-       x="49.062782"
-       y="101.13267"
-       ry="8.2130041" />
+       width="205.99103"
+       height="30.244713"
+       x="2.0044863"
+       y="61.283958"
+       ry="15.122356" />
     <rect
-       style="fill:#1a1a1a;stroke-width:0.334988"
+       style="fill:#1a1a1a;stroke-width:0.616803"
        id="rect3-5"
-       width="89.233185"
-       height="19.533632"
-       x="60.383411"
-       y="136.60153"
-       ry="9.7668161" />
+       width="164.30237"
+       height="35.966686"
+       x="22.84882"
+       y="126.59171"
+       ry="17.983343" />
     <rect
-       style="fill:#1a1a1a;stroke-width:0.253385"
+       style="fill:#1a1a1a;stroke-width:0.46655"
        id="rect3-5-2"
-       width="51.053814"
-       height="19.533632"
-       x="79.473099"
-       y="172.09518"
-       ry="9.7668161" />
+       width="94.003845"
+       height="35.966686"
+       x="57.998085"
+       y="191.9451"
+       ry="17.983343" />
   </g>
 </svg>
