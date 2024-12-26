@@ -9,11 +9,15 @@
 .navbar {
   display: flex;
   flex-direction: row;
-  /* margin: top  side bott side */
+  /* margin: top side bott side */
   margin: 20px 50px 20px 50px;
 }
 
-.getStarted {
-  font-size: 20px;
-  /* font-family: 'Times New Roman', Times, serif */
+.loginNavbar {
+  font-size: 16px;
+  font-weight: 600;
+  background-color: white;
+  border-width: 3px;
+  border-color: black;
+  color: black;
 }

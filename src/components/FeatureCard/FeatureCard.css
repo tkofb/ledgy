@@ -1,0 +1,15 @@
+.featureCard {
+    display: flex;
+    flex-direction: column;
+    width: 218px;
+    height: 218px;
+    border-radius: 24px;
+    background-color: #764C24;
+    color: white;
+}
+
+h5 {
+    font-size: 24px;
+    line-height: 26.4px;
+    margin: 10%;
+}

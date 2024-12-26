@@ -9,24 +9,29 @@
   border-style: solid;
   border-width: 1px;
   justify-content: space-between;
+}
 
+#features,
+#benefits,
+#faq {
+  scroll-margin-top: 100px; /* Adjust the value for desired padding */
 }
 
 .logoPic {
-    width: 32px;
-    height: 32px;
-    vertical-align: middle;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
 }
 
 .icons {
-    display: flex;
-    align-self: center;
-    justify-self: right;
-    gap: 50px;
-    margin-right: 10px;
+  display: flex;
+  align-self: center;
+  justify-self: right;
+  gap: 50px;
+  margin-right: 10px;
 }
 
 .footer .logoText {
-    font-weight: 600;
-    text-align: center;
+  font-weight: 600;
+  text-align: center;
 }
