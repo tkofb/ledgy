@@ -1,8 +1,7 @@
 .home {
   display: flex;
   flex-direction: column;
-  width: 90%;
-  margin: 30px auto;
+  margin-bottom: 30px;
   gap: 50px;
 }
 
@@ -40,18 +39,6 @@
   max-width: 500px;
 }
 
-.call-to-action {
-  border-radius: 16px;
-  text-align: center;
-  padding: 12px 38px;
-  background: #ff9eab;
-  color: #262626;
-  border-style: solid;
-  border-width: 1px;
-  font-weight: 900;
-  margin: auto;
-}
-
 h1 {
   font-size: 56px;
   line-height: 61.6px;
@@ -77,56 +64,34 @@ h3 {
   gap: 30px;
 }
 
-.robinhoodLogo {
-  width: 68px;
-  height: 68px;
-  display: block;
-}
-
-.charlesSchwabLogo {
-  width: 68px;
-  height: 68px;
-  display: block;
-}
-
+.robinhoodLogo,
+.charlesSchwabLogo,
 .vanguardLogo {
   width: 68px;
   height: 68px;
   display: block;
 }
 
-.charlesSchwabHolder {
-  display: flex;
-  width: 110px;
-  height: 110px;
-  background-color: #00a0df;
-  border: solid burlywood 3px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 24px;
-}
-
-.robinhoodHolder {
-  display: flex;
-  width: 110px;
-  height: 110px;
-  background-color: #00c805;
-  border: solid burlywood 3px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 24px;
-}
-
+.charlesSchwabHolder,
+.robinhoodHolder,
 .vanguardHolder {
   display: flex;
   width: 110px;
   height: 110px;
-  background-color: white;
-  border: solid black 2px;
   border: solid burlywood 3px;
   align-items: center;
   justify-content: center;
   border-radius: 24px;
+}
+
+.charlesSchwabHolder {
+  background-color: #00a0df;
+}
+.robinhoodHolder {
+  background-color: #00c805;
+}
+.vanguardHolder {
+  background-color: white;
 }
 
 .bottomLeft {
@@ -145,7 +110,7 @@ h3 {
 .features {
   display: flex;
   flex-direction: column;
-  background: #ff9eab;
+  background: #fff4e6;
   border-radius: 30px;
   max-width: 900px;
   border-style: solid;
@@ -153,7 +118,7 @@ h3 {
   align-self: auto;
   justify-self: center;
   align-self: center;
-  margin: 50px
+  margin: 50px;
 }
 
 .featureCards {
@@ -196,13 +161,17 @@ h3 {
   border-color: black;
   color: black;
   width: 100%;
-  /* font-family: 'Times New Roman', Times, serif */
+}
+
+#features,
+#benefits,
+#faq {
+  scroll-margin-top: 100px;
 }
 
 .getStartedHero {
   font-size: 16px;
   font-weight: 600;
-  /* font-family: 'Times New Roman', Times, serif */
   background-color: black;
   width: 100%;
 }

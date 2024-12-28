@@ -3,7 +3,7 @@ import { SiFacebook, SiX, SiInstagram } from "@icons-pack/react-simple-icons";
 
 export const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer container-xxl">
 
       <p className="logoText">© 2024 ysidro media. all rights reserved</p>
 

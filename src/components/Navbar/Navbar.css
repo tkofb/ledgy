@@ -4,13 +4,18 @@
   font-size: 20px;
   font-weight: 600;
   text-decoration: none;
+  color: black;
+}
+
+.navbarHeading:hover {
+  color: #764c24;
 }
 
 .navbar {
   display: flex;
   flex-direction: row;
   /* margin: top side bott side */
-  margin: 20px 50px 20px 50px;
+  margin: 20px 50px;
 }
 
 .loginNavbar {
@@ -20,4 +25,12 @@
   border-width: 3px;
   border-color: black;
   color: black;
+}
+
+.loginNavbar:hover,
+.getStartedHero:hover,
+.loginHero:hover {
+  background-color: #764c24;
+  border: black solid 3px;
+  transition: all 0.2s ease;
 }

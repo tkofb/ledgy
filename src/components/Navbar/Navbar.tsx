@@ -3,17 +3,15 @@ import "./Navbar.css";
 
 export function Navbar() {
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <img src="icon.svg" alt="company logo" width={50} />
       <div>
-        {/* <a className='navbarHeading' href='https://www.google.com'>features</a> */}
         <a className="navbarHeading" href="#features">
           features
         </a>
         <a className="navbarHeading" href="#benefits">
           benefits
         </a>
-        {/* <h1 className='navbarHeading'>Plans</h1> */}
         <a className="navbarHeading" href="#faq">
           faq
         </a>
@@ -25,6 +23,6 @@ export function Navbar() {
       >
         LOGIN
       </NavLink>
-    </div>
+    </nav>
   );
 }

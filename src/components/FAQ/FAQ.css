@@ -1,22 +1,14 @@
-.accordion-button:not(.collapsed) {
+.accordion-button:not(.collapsed), .accordion-item {
   color: inherit;
   box-shadow: none;
   background-color: antiquewhite;
 }
 
-.accordion-body {
-  background-color: lightcyan;
-}
-
-.accordion-button.collapsed {
-  background-color: transparent; /* Transparent background when collapsed */
-}
+.accordion-body {background-color: white;}
+.accordion-button.collapsed {background-color: transparent;}
 
 .accordion-button:focus {
   box-shadow: none; /* Removes the focus outline shadow */
   outline: none; /* Removes the focus outline */
 }
 
-.accordion-item {
-  background-color: antiquewhite;
-}

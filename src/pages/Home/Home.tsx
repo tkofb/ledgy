@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { FeatureCard } from "../../components/FeatureCard/FeatureCard";
-import { Footer } from "../../components/Footer/Footer";
 import FAQ from "../../components/FAQ/FAQ";
+import { Footer } from "../../components/Footer/Footer";
 
 import {
   AcademicCapIcon,
@@ -35,7 +35,7 @@ const thirdFeatureCardMessage = "track your investments and earn points";
 
 export const Home = () => {
   return (
-    <>
+    <main className="home">
       <Navbar></Navbar>
 
       <div className="hero container-xl">
@@ -135,13 +135,37 @@ export const Home = () => {
       </div>
 
       <div id="faq" className="container my-5">
+        <h1 className="faqText bold">FAQ.</h1>
         <div className="accordion" id="accordionExample">
-          <FAQ title="I am a" message="Monster"></FAQ>
-          <FAQ title="I am a" message="Monster"></FAQ>
+          <FAQ
+            title="Is my trading data secure?"
+            message="Your data is encrypted and stored securely on our servers.
+            We prioritize user privacy and do not share your data with third parties."
+          ></FAQ>
+          <FAQ
+            title="What happens to my data if I stop using the journal?"
+            message="You can download all your data before closing your account to
+            ensure you retain your trade history."
+          ></FAQ>
+          <FAQ
+            title="Is the trading journal free to use?"
+            message="The platform offers a free tier with essential features, and premium 
+            plans are available for users who need advanced tools and analytics."
+          ></FAQ>
+          <FAQ
+            title="Can I manually enter trades into the journal?"
+            message="Yes, you can manually input trades, including details like entry/exit 
+            points, trade size, and additional notes."
+          ></FAQ>
+          <FAQ
+            title="Is this platform suitable for beginners or experienced traders?"
+            message="The platform is designed for both beginners and experienced traders, 
+            offering basic trade logging for newcomers and advanced analytics for seasoned users."
+          ></FAQ>
         </div>
       </div>
       <Footer></Footer>
-    </>
+    </main>
   );
 };
 
