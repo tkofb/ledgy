@@ -1,12 +1,12 @@
 import { FormEvent, useRef, useState } from "react";
-import "./Login.css";
+import "./LoginOrCreate.css";
 import axios from "axios";
 
 interface props {
   state: "login" | "create"
 }
 
-const Login = (props: props) => {
+const LoginOrCreate = (props: props) => {
   const [activeTab, setActiveTab] = useState<"login" | "create">(props.state);
 
   // Login Refs
@@ -152,4 +152,4 @@ const Login = (props: props) => {
   );
 };
 
-export default Login;
+export default LoginOrCreate;

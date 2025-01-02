@@ -1,0 +1,117 @@
+/* Container Styling */
+.box-container {
+  width: 400px;
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.containerHolder {
+  display: flex;
+  height: 75vh;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+}
+
+.bold {
+  font-weight: 600;
+}
+
+/* Tab Content */
+.tab-content {
+  padding: 20px;
+}
+
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input {
+  margin-bottom: 15px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 10px;
+  background-color: #764c24;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.bold-button {
+  font-weight: bold;
+}
+
+.submit-button,
+.create {
+  width: 100%;
+}
+
+/* Tab Options */
+.tab-options {
+  display: flex;
+  justify-content: space-between;
+  border: black 2px solid;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 2px;
+  justify-content: center;
+  gap: 5px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+  background-color: #ddd;
+}
+
+.tab.active {
+  background-color: #764c24;
+  color: white;
+  font-weight: bold;
+}
