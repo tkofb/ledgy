@@ -1,4 +1,5 @@
 import { FormEvent, useRef, useState } from "react";
+import CreatePassword from "../../components/CreatePassword/CreatePassword";
 import "./LoginOrCreate.css";
 import axios from "axios";
 
@@ -17,6 +18,7 @@ const LoginOrCreate = (props: props) => {
   const usernameSignUpRef = useRef<HTMLInputElement>(null);
   const emailSignUpRef = useRef<HTMLInputElement>(null);
   const passwordSignUpRef = useRef<HTMLInputElement>(null);
+  const confirmPasswordSignUpRef = useRef<HTMLInputElement>(null);
 
   async function handleSignUp(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -24,6 +26,7 @@ const LoginOrCreate = (props: props) => {
     const username = usernameSignUpRef.current?.value;
     const email = emailSignUpRef.current?.value;
     const password = passwordSignUpRef.current?.value;
+    const confirmPassword = confirmPasswordSignUpRef.current?.value;
 
     const variables = {
       username,
@@ -37,9 +40,6 @@ const LoginOrCreate = (props: props) => {
     } catch (err) {
       console.log(err);
     }
-
-    console.log("signUp");
-    console.log(username, email, password);
   }
 
   async function handleLogin(e: FormEvent<HTMLFormElement>) {
@@ -56,9 +56,6 @@ const LoginOrCreate = (props: props) => {
     } catch (err) {
       console.log(err);
     }
-
-    console.log("login");
-    console.log(email, password);
   };
 
   return (
@@ -132,13 +129,16 @@ const LoginOrCreate = (props: props) => {
                   ref={emailSignUpRef}
                 />
 
-                <label htmlFor="password-create">password:</label>
+                {/* <label htmlFor="password-create">password:</label>
                 <input
                   type="password"
                   id="password-create"
                   placeholder="create a password"
                   ref={passwordSignUpRef}
-                />
+                /> */}
+
+                <CreatePassword ref={passwordSignUpRef}></CreatePassword>
+                <CreatePassword ref={confirmPasswordSignUpRef} confirm></CreatePassword>
 
                 <button className="bold-button submit-button" type="submit">
                   submit
