@@ -2,9 +2,10 @@ import { FormEvent, useRef, useState } from "react";
 import CreatePassword from "../../components/CreatePassword/CreatePassword";
 import "./LoginOrCreate.css";
 import axios from "axios";
+import zxcbn from "zxcvbn";
 
 interface props {
-  state: "login" | "create"
+  state: "login" | "create";
 }
 
 const LoginOrCreate = (props: props) => {
@@ -18,7 +19,7 @@ const LoginOrCreate = (props: props) => {
   const usernameSignUpRef = useRef<HTMLInputElement>(null);
   const emailSignUpRef = useRef<HTMLInputElement>(null);
   const passwordSignUpRef = useRef<HTMLInputElement>(null);
-  const confirmPasswordSignUpRef = useRef<HTMLInputElement>(null);
+  // const confirmPasswordSignUpRef = useRef<HTMLInputElement>(null);
 
   async function handleSignUp(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -26,7 +27,7 @@ const LoginOrCreate = (props: props) => {
     const username = usernameSignUpRef.current?.value;
     const email = emailSignUpRef.current?.value;
     const password = passwordSignUpRef.current?.value;
-    const confirmPassword = confirmPasswordSignUpRef.current?.value;
+    // const confirmPassword = confirmPasswordSignUpRef.current?.value;
 
     const variables = {
       username,
@@ -34,11 +35,27 @@ const LoginOrCreate = (props: props) => {
       password,
     };
 
-    try {
-      const res = await axios.post("http://localhost:3000/register", variables);
-      console.log(res);
-    } catch (err) {
-      console.log(err);
+    // if (password != undefined && confirmPassword != undefined) {
+    if (password != undefined) {
+      const strength = zxcbn(password).score;
+
+      // if (password != confirmPassword) {
+      //   console.log("Wrong Password");
+      //   return;
+      if (strength <= 2) {
+        console.log("Password Not Strong Enough");
+        return;
+      }
+
+      try {
+        const res = await axios.post(
+          "http://localhost:3000/register",
+          variables
+        );
+        console.log(res);
+      } catch (err) {
+        console.log(err);
+      }
     }
   }
 
@@ -48,7 +65,7 @@ const LoginOrCreate = (props: props) => {
     const email = emailRef.current?.value;
     const password = passwordRef.current?.value;
 
-    const variables = {email, password}
+    const variables = { email, password };
 
     try {
       const res = await axios.post("http://localhost:3000/login", variables);
@@ -56,7 +73,7 @@ const LoginOrCreate = (props: props) => {
     } catch (err) {
       console.log(err);
     }
-  };
+  }
 
   return (
     <div className="containerHolder">
@@ -80,7 +97,6 @@ const LoginOrCreate = (props: props) => {
           </button>
         </div>
 
-        {/* Tab Content */}
         <div className="tab-content">
           {activeTab === "login" && (
             <div className="content active">
@@ -129,16 +145,11 @@ const LoginOrCreate = (props: props) => {
                   ref={emailSignUpRef}
                 />
 
-                {/* <label htmlFor="password-create">password:</label>
-                <input
-                  type="password"
-                  id="password-create"
-                  placeholder="create a password"
-                  ref={passwordSignUpRef}
-                /> */}
-
                 <CreatePassword ref={passwordSignUpRef}></CreatePassword>
-                <CreatePassword ref={confirmPasswordSignUpRef} confirm></CreatePassword>
+                {/* <CreatePassword
+                  ref={confirmPasswordSignUpRef}
+                  confirm
+                ></CreatePassword> */}
 
                 <button className="bold-button submit-button" type="submit">
                   submit

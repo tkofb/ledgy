@@ -2,12 +2,13 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { Document, MongoClient, OptionalId } from "mongodb";
+import { body, validationResult } from "express-validator";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const connectionURI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.4rkg4.mongodb.net/`;
+const connectionURI = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.4rkg4.mongodb.net/?ssl=true`;
 const client = new MongoClient(connectionURI);
 const dbName = process.env.DB_NAME;
 
@@ -15,22 +16,23 @@ const dbName = process.env.DB_NAME;
 app.use(express.json()); // Parse JSON payloads
 app.use(cors());
 
-
 async function deleteAll(client: MongoClient) {
   try {
-    await client.connect()
+    await client.connect();
 
     const database = client.db(dbName);
     const collection = database.collection("register");
 
     await collection.deleteMany();
   } finally {
-    await client.close()
+    await client.close();
   }
 }
 
-const shouldDelete = false
-if(shouldDelete){deleteAll(client)}
+const shouldDelete = false;
+if (shouldDelete) {
+  deleteAll(client);
+}
 
 async function insertUser(
   client: MongoClient,
@@ -86,16 +88,36 @@ async function validateLogin(
     await client.close();
   }
 }
-app.post("/register", async function (req: Request, res: Response) {
-  const status = await insertUser(client, req.body);
-  if (status === 200) {
-    res.status(status).send("Insert Complete");
-  } else if (status === 400) {
-    res.status(status).send("Account in Use");
-  } else {
-    res.status(status).send("Server Error");
+app.post(
+  "/register",
+  [
+    body("email").isEmail().normalizeEmail(),
+    body("password")
+      .isLength({ min: 8 }) // Set minimum length to 8
+      .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/) // Adjust regex for minimum 8 characters
+      .withMessage(
+        "Password must be at least 8 characters long and include uppercase, lowercase, number, and special character."
+      ),
+    body("username").isAlphanumeric().trim().escape(),
+  ],
+  async function (req: Request, res: Response) {
+    const status = await insertUser(client, req.body);
+
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      res.status(400).json({ errors: errors.array() });
+    }
+
+    if (status === 200) {
+      res.status(status).send("Insert Complete");
+    } else if (status === 400) {
+      res.status(status).send("Account in Use");
+    } else {
+      res.status(status).send("Server Error");
+    }
   }
-});
+);
 
 app.post("/login", async function (req: Request, res: Response) {
   const status = await validateLogin(client, req.body);
